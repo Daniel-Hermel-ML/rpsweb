@@ -1,16 +1,23 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"net/http"
+	"rpsweb/handlers"
 )
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hola Mundo")
-	})
+	//Criando o roteador
+	router := http.NewServeMux()
+
+	//Configurar a rota
+	router.HandleFunc("/", handlers.Index)
+	router.HandleFunc("/new", handlers.NewGame)
+	router.HandleFunc("/game", handlers.Game)
+	router.HandleFunc("/play", handlers.Play)
+	router.HandleFunc("/about", handlers.About)
 
 	port := ":8090"
-	fmt.Printf("Servidor rodando em http://localhost%s\n", port)
-	http.ListenAndServe(port, nil)
+	log.Printf("Servidor rodando em http://localhost%s\n", port)
+	log.Fatal(http.ListenAndServe(port, router))
 }
