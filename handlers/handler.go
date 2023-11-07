@@ -18,7 +18,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 		Message string
 	}{
 		Title:   "Página de inicio",
-		Message: "Bem Vindo a Pedra, Papel e Tesoura.",
+		Message: "Bem Vindo a Pedra, papel e tesoura.",
 	}
 
 	err = tpl.Execute(w, data)
