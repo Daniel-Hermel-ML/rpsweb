@@ -17,7 +17,7 @@ func main() {
 	router.HandleFunc("/play", handlers.Play)
 	router.HandleFunc("/about", handlers.About)
 
-	port := ":8090"
+	port := ":5000"
 	log.Printf("Servidor rodando em http://localhost%s\n", port)
 	log.Fatal(http.ListenAndServe(port, router))
 }
