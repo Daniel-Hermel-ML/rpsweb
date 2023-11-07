@@ -1,0 +1,22 @@
+{{ define "base"}}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <title>{{ template "title" . }}</title>
+    </head>
+    <body>
+        <header>
+            <h2>Cabeçalho</h2>
+        </header>
+
+        {{ template "content" . }}
+
+        <footer>
+            <p>Criado por DHERMEL &copy; 2023</p>
+        </footer>
+
+    </body>
+</html>
+{{ end }}
