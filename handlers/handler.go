@@ -17,11 +17,11 @@ func Index(w http.ResponseWriter, r *http.Request) {
 }
 
 func NewGame(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Criar novo Game")
+	renderTemplate(w, "new-game.html", nil)
 }
 
 func Game(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Jogo")
+	renderTemplate(w, "game.html", nil)
 }
 
 func Play(w http.ResponseWriter, r *http.Request) {
@@ -29,7 +29,7 @@ func Play(w http.ResponseWriter, r *http.Request) {
 }
 
 func About(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "A cerca de")
+	renderTemplate(w, "about.html", nil)
 }
 
 func renderTemplate(w http.ResponseWriter, page string, data any) {
