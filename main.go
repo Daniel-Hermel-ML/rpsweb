@@ -7,8 +7,14 @@ import (
 )
 
 func main() {
+
 	//Criando o roteador
 	router := http.NewServeMux()
+
+	// Manejador para servir los archivos estáticos
+	fs := http.FileServer(http.Dir("static"))
+	// Ruta para acceder a los archivos estáticos
+	router.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	//Configurar a rota
 	router.HandleFunc("/", handlers.Index)
