@@ -12,6 +12,12 @@ const (
 	templateBase = templateDir + "base.html"
 )
 
+type Player struct {
+	Nome string
+}
+
+var player Player
+
 func Index(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "index.html", nil)
 }
