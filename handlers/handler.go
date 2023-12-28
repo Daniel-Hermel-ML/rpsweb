@@ -82,4 +82,6 @@ func renderTemplate(w http.ResponseWriter, page string, data any) {
 // Reniciar valores
 func restartValue() {
 	player.Name = ""
+	rps.ComputerScore = 0
+	rps.PlayerScore = 0
 }
